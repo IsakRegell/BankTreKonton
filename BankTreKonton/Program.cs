@@ -31,7 +31,7 @@ namespace BankTreKonton
                         case "1":
                             Console.WriteLine("Detta är ditt investeringskonto");
                             Console.WriteLine("Tryck (1) för att kolla ditt saldo");
-                            Console.WriteLine("Tryck (2) för överföra pengar mellan din konton");
+                            Console.WriteLine("Tryck (2) för överföra pengar mellan dina konton");
                             Console.WriteLine("Tryck (3) för att gå till kontomeny");
                             Console.WriteLine("Tryck (4) för att stänga av programet");
                             String investeringskontoVal = Console.ReadLine();
@@ -42,11 +42,21 @@ namespace BankTreKonton
                             }
                             if (investeringskontoVal == "2")
                             {
-                                Console.WriteLine("Metod saknas för att överförapengar");
-                                //programIsRuning = true;
+                                Console.WriteLine("hur mycket pengar vill du föra över");
+                                int pengarAttFörraÖver = Convert.ToInt32(Console.ReadLine());
+
+                                Console.WriteLine("Vilken konto vill du förra över pengarna till");
+                                string kontoAttFörraÖverPengarnaTill = Console.ReadLine();
+
+                                switch (kontoAttFörraÖverPengarnaTill)
+                                {
+                                    //hantering av överföring
+                                }
+
                             }
                             if (investeringskontoVal == "3")
                             {
+                                
                                 isRuning = false;
                             }
                             if (investeringskontoVal == "4")
@@ -61,7 +71,7 @@ namespace BankTreKonton
                         case "2":
                             Console.WriteLine("Detta är ditt Sparkonto");
                             Console.WriteLine("Tryck (1) för att kolla ditt saldo");
-                            Console.WriteLine("Tryck (2) för överföra pengar mellan din konton");
+                            Console.WriteLine("Tryck (2) för överföra pengar mellan dina konton");
                             Console.WriteLine("Tryck (3) för att gå till kontomeny");
                             Console.WriteLine("Tryck (4) för att stänga av programet");
                             String sparkontoVal = Console.ReadLine();
@@ -73,7 +83,6 @@ namespace BankTreKonton
                             if (sparkontoVal == "2")
                             {
                                 Console.WriteLine("Metod saknas för att överförapengar");
-                                //programIsRuning = true;
                             }
                             if (sparkontoVal == "3")
                             {
@@ -94,7 +103,7 @@ namespace BankTreKonton
                         case "3":
                             Console.WriteLine("Detta är ditt Personkonto");
                             Console.WriteLine("Tryck (1) för att kolla ditt saldo");
-                            Console.WriteLine("Tryck (2) för överföra pengar mellan din konton");
+                            Console.WriteLine("Tryck (2) för överföra pengar mellan dina konton");
                             Console.WriteLine("Tryck (3) för att gå till kontomeny");
                             Console.WriteLine("Tryck (4) för att stänga av programet");
                             String PersonkontoVal = Console.ReadLine();

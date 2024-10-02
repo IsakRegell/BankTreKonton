@@ -28,5 +28,18 @@
             this.saldo = this.saldo + money;
         }
 
+        public void internalMoneyTransfer(int money, int kontonummer, Sparkonto isakSparkonto, Personkonto isakPersonkonto, Investeringskonto isakInvesteringskonto)
+        {
+            this.kontonummer = kontonummer;
+            isakSparkonto.draw(money);
+            isakSparkonto.deposit(money);
+
+            isakPersonkonto.draw(money);
+            isakPersonkonto.deposit(money);
+
+            isakInvesteringskonto.draw(money);
+            isakInvesteringskonto.deposit(money);
+        }
+
     }
 }
