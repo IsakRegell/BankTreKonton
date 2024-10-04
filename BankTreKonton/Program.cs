@@ -42,15 +42,26 @@ namespace BankTreKonton
                             }
                             if (investeringskontoVal == "2")
                             {
-                                Console.WriteLine("hur mycket pengar vill du föra över");
+                                Console.WriteLine("hur mycket pengar vill du föra över : ");
                                 int pengarAttFörraÖver = Convert.ToInt32(Console.ReadLine());
 
-                                Console.WriteLine("Vilken konto vill du förra över pengarna till");
-                                string kontoAttFörraÖverPengarnaTill = Console.ReadLine();
+                                Console.WriteLine("Vilken konto vill du förra över pengarna till : ");
+                                int kontoAttFörraÖverPengarnaTill = Convert.ToInt32(Console.ReadLine());
 
-                                switch (kontoAttFörraÖverPengarnaTill)
+                                isakInvesteringskonto.draw(pengarAttFörraÖver);
+                                if (kontoAttFörraÖverPengarnaTill == isakPersonkonto.kontonummer) 
                                 {
-                                    //hantering av överföring
+                                    isakPersonkonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Investeringskontot är nu :{isakInvesteringskonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Personkonto är nu :{isakPersonkonto.checkSaldo()}kr");
+                                }
+                                if (kontoAttFörraÖverPengarnaTill == isakSparkonto.kontonummer)
+                                {
+                                    isakSparkonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Investeringskontot är nu :{isakInvesteringskonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Sparkonto är nu :{isakSparkonto.checkSaldo()}kr");
                                 }
 
                             }
@@ -82,7 +93,28 @@ namespace BankTreKonton
                             }
                             if (sparkontoVal == "2")
                             {
-                                Console.WriteLine("Metod saknas för att överförapengar");
+                                Console.WriteLine("hur mycket pengar vill du föra över : ");
+                                int pengarAttFörraÖver = Convert.ToInt32(Console.ReadLine());
+
+                                Console.WriteLine("Vilken konto vill du förra över pengarna till : ");
+                                int kontoAttFörraÖverPengarnaTill = Convert.ToInt32(Console.ReadLine());
+
+                                isakSparkonto.draw(pengarAttFörraÖver);
+                                if (kontoAttFörraÖverPengarnaTill == isakPersonkonto.kontonummer)
+                                {
+                                    isakPersonkonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Sparkonto är nu :{isakSparkonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Personkonto är nu :{isakPersonkonto.checkSaldo()}kr");
+                                }
+                                if (kontoAttFörraÖverPengarnaTill == isakInvesteringskonto.kontonummer)
+                                {
+                                    isakInvesteringskonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Sparkonto är nu :{isakSparkonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Investeringskonto är nu :{isakInvesteringskonto.checkSaldo()}kr");
+                                }
+
                             }
                             if (sparkontoVal == "3")
                             {
@@ -114,7 +146,27 @@ namespace BankTreKonton
                             }
                             if (PersonkontoVal == "2")
                             {
-                                Console.WriteLine("Metod saknas för att överförapengar");
+                                Console.WriteLine("hur mycket pengar vill du föra över : ");
+                                int pengarAttFörraÖver = Convert.ToInt32(Console.ReadLine());
+
+                                Console.WriteLine("Vilken konto vill du förra över pengarna till : ");
+                                int kontoAttFörraÖverPengarnaTill = Convert.ToInt32(Console.ReadLine());
+
+                                isakPersonkonto.draw(pengarAttFörraÖver);
+                                if (kontoAttFörraÖverPengarnaTill == isakInvesteringskonto.kontonummer)
+                                {
+                                    isakInvesteringskonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Personkonto är nu :{isakPersonkonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Investeringskonto är nu :{isakInvesteringskonto.checkSaldo()}kr");
+                                }
+                                if (kontoAttFörraÖverPengarnaTill == isakSparkonto.kontonummer)
+                                {
+                                    isakSparkonto.deposit(pengarAttFörraÖver);
+                                    Console.WriteLine($"Ditt saldo på Personkonto är nu :{isakPersonkonto.checkSaldo()}kr");
+                                    Console.WriteLine(" ");
+                                    Console.WriteLine($"Ditt saldo på Sparkonto är nu :{isakSparkonto.checkSaldo()}kr");
+                                }
                             }
                             if (PersonkontoVal == "3")
                             {
